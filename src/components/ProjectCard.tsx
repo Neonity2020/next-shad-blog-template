@@ -19,9 +19,9 @@ const ProjectCard = ({ title, description, link, tags, imageUrl }: ProjectCardPr
           <Image
             src={imageUrl}
             alt={`${title} preview`}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t-lg"
+            fill
+            className="object-cover rounded-lg"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <CardHeader>
