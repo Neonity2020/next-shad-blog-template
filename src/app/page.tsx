@@ -3,10 +3,12 @@ import BlogCard from '@/components/BlogCard'
 import { RocketLaunchIcon, NewspaperIcon } from '@heroicons/react/24/outline'
 import { getSortedPostsData } from '@/lib/posts'
 import Link from 'next/link'
+import { getAllProjects } from '@/data/projects'
 
 export default function Home() {
   const allPostsData = getSortedPostsData()
   const recentPosts = allPostsData.slice(0, 8) // 只取最新的8篇文章
+  const projects = getAllProjects()
 
   return (
     <main className="min-h-screen bg-transparent text-foreground">
@@ -22,21 +24,16 @@ export default function Home() {
             正在开发的项目
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <ProjectCard 
-              title="项目1" 
-              description="这是一个正在开发的项目描述"
-              link="/projects/project1"
-              tags={["标签1", "标签2"]}
-              imageUrl="/images/projects/project1.png"
-            />
-            <ProjectCard 
-              title="项目2" 
-              description="另一个正在开发的项目描述"
-              link="/projects/project2" 
-              tags={["标签3", "标签4"]}
-              imageUrl="/images/projects/project2.png"
-            />
-            {/* 添加更多项目卡片 */}
+          {projects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                link={`/projects/${project.id}`}
+                tags={project.tags}
+                imageUrl={project.imageUrl || ""}
+              />
+            ))}
           </div>
         </section>
         
