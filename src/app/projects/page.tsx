@@ -11,9 +11,9 @@ const projects = [
     imageUrl: "/images/projects/project1.png"
   },
   {
-    title: "项目2",
-    description: "项目2是一个创新的应用,旨在解决特定问题。这里简要介绍其特点。",
-    link: "/projects/project2",
+    title: "flowLog",
+    description: "flowLog 是一个用于记录和分析工作流程的工具。",
+    link: "/projects/flowLog",
     tags: ["TypeScript", "Node.js", "MongoDB"],
     image: "/images/projects/project2.png",
     imageUrl: "/images/projects/project2.png"

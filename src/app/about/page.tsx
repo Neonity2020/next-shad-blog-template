@@ -14,9 +14,9 @@ export default function About() {
             <MatrixRain />
             <div className="relative z-10">
               <CardHeader className="pb-4">
-                <CardTitle className="text-4xl font-bold text-center">关于我</CardTitle>
+                <CardTitle className="text-4xl font-bold text-center text-white">关于我</CardTitle>
                 <Link href="/about" className="text-center block">
-                  <p className="mb-4 hover:underline">Neontiy</p>
+                  <p className="mb-4 hover:underline text-white">Neontiy</p>
                   <Image src="/images/matrix-neonity-avatar.png" alt="头像" width={96} height={96} className="rounded-full mx-auto" />
                 </Link>
               </CardHeader>
