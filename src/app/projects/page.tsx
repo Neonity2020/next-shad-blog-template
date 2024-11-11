@@ -1,6 +1,5 @@
 import ProjectCard from '@/components/ProjectCard'
 import { Button } from "@/components/ui/button"
-<<<<<<< HEAD
 
 const projects = [
   {
@@ -26,13 +25,8 @@ const projects = [
     tags: ["Vue.js", "Vuex", "Firebase"]
   },
 ]
-=======
-import { getAllProjects } from '@/data/projects'
->>>>>>> 455b417bf93a6fe746452da5e00f5988fd198e95
 
 export default function Projects() {
-  const projects = getAllProjects()
-
   return (
     <main className="min-h-screen bg-transparent">
       <div className="container mx-auto px-4 py-8 sm:py-16">
@@ -46,10 +40,10 @@ export default function Projects() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects.map((project) => (
               <ProjectCard
-                key={project.id}
+                key={project.title}
                 title={project.title}
                 description={project.description}
-                link={`/projects/${project.id}`}
+                link={project.link}
                 tags={project.tags}
                 imageUrl={project.imageUrl || ""}
               />
